@@ -10,6 +10,6 @@ import { Component } from 'angular2/core';
     `
 })
 
-export class AppComponent{
+export class AppComponent {
     pageTitle: string = 'Local Events App';
 }
