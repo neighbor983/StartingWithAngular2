@@ -34,7 +34,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='#event of events'>
-                        <td></td>
+                        <td>
+                            <img [src]='event.imageUrl' 
+                                [title]='event.name'
+                                [style.width.px]='imageWidth'
+                                [style.margin.px]='imageMargin'>
+                        </td>
                         <td>{{event.name}}</td>
                         <td>{{event.code}}</td>
                         <td>{{event.date}}</td>

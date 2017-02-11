@@ -21,6 +21,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             EventListComponent = (function () {
                 function EventListComponent() {
                     this.pageTitle = '+ Event List +';
+                    this.imageWidth = 50;
+                    this.imageMargin = 2;
                     this.events = [{
                             'name': 'Event 1',
                             'code': 'Evt100',

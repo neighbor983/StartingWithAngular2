@@ -7,6 +7,8 @@ import { Component } from 'angular2/core';
 
 export class EventListComponent {
     pageTitle: string = '+ Event List +';
+    imageWidth: number = 50;
+    imageMargin: number = 2;
     events: any[] = [{
                 'name': 'Event 1',
                 'code': 'Evt100',
