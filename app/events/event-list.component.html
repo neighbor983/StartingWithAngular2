@@ -21,8 +21,9 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class="btn btn-primary">
-                                Show Image
+                            <button class="btn btn-primary"
+                                (click)='toggleImage()'>
+                                {{showImage ? 'Hide' : 'Show'}} Image
                             </button>
                         </th>
                         <th>Event</th>
@@ -35,7 +36,8 @@
                 <tbody>
                     <tr *ngFor='#event of events'>
                         <td>
-                            <img [src]='event.imageUrl' 
+                            <img *ngIf='showImage'
+                                [src]='event.imageUrl' 
                                 [title]='event.name'
                                 [style.width.px]='imageWidth'
                                 [style.margin.px]='imageMargin'>

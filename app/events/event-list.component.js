@@ -23,6 +23,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.pageTitle = '+ Event List +';
                     this.imageWidth = 50;
                     this.imageMargin = 2;
+                    this.showImage = false;
                     this.events = [{
                             'name': 'Event 1',
                             'code': 'Evt100',
@@ -105,6 +106,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                     ];
                 }
+                EventListComponent.prototype.toggleImage = function () {
+                    this.showImage = !this.showImage;
+                };
                 EventListComponent = __decorate([
                     core_1.Component({
                         selector: 'el-events',
