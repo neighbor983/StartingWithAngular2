@@ -6,5 +6,5 @@ import { Component } from 'angular2/core';
 })
 
 export class EventListComponent {
-    pageTitle: 'Event List';
+    pageTitle: string = '+ Event List +';
 }
