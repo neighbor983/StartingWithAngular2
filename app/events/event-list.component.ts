@@ -1,12 +1,14 @@
 import { Component, OnInit } from 'angular2/core';
 import { IEvent } from './event';
 import { EventFilterPipe } from './event-filter.pipe';
+import { ThumbComponent } from '../shared/thumb.component';
 
 @Component({
     selector: 'el-events',
     templateUrl: 'app/events/event-list.component.html',
     styleUrls: [ 'app/events/event-list.component.css' ],
-    pipes: [EventFilterPipe]
+    pipes: [EventFilterPipe],
+    directives: [ThumbComponent]
 })
 
 export class EventListComponent implements OnInit {
@@ -96,10 +98,16 @@ export class EventListComponent implements OnInit {
                 'capacity': 400
                 }
             ];
+
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
+
     ngOnInit(): void {
         console.log('OnInit');
+    }
+
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Event List: ' + message;
     }
 }

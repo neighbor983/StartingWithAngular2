@@ -24,7 +24,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 EventFilterPipe.prototype.transform = function (value, args) {
                     var filter = args[0] ? args[0].toLocaleLowerCase() : null;
                     return filter ?
-                        value.filter(function (event) { return event.name.toLocaleLowerCase().indexOf(filter) != -1; })
+                        value.filter(function (event) {
+                            return event.name.toLocaleLowerCase().indexOf(filter) !== -1;
+                        })
                         : value;
                 };
                 EventFilterPipe = __decorate([
