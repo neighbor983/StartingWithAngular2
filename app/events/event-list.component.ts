@@ -3,7 +3,8 @@ import { IEvent } from './event';
 
 @Component({
     selector: 'el-events',
-    templateUrl: 'app/events/event-list.component.html'
+    templateUrl: 'app/events/event-list.component.html',
+    styleUrls: [ 'app/events/event-list.component.css' ]
 })
 
 export class EventListComponent {
