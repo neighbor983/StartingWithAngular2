@@ -10,6 +10,7 @@ export class EventListComponent {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
+    searchCriteria: string = 'beach';
     events: any[] = [{
                 'name': 'Event 1',
                 'code': 'Evt100',
