@@ -1,4 +1,5 @@
 import { Component } from 'angular2/core';
+import { IEvent } from './event';
 
 @Component({
     selector: 'el-events',
@@ -11,7 +12,7 @@ export class EventListComponent {
     imageMargin: number = 2;
     showImage: boolean = false;
     searchCriteria: string = 'beach';
-    events: any[] = [{
+    events: IEvent[] = [{
                 'name': 'Event 1',
                 'code': 'Evt100',
                 'description': 'The first event',
