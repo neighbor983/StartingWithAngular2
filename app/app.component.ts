@@ -5,7 +5,7 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 import 'rxjs/Rx';  // Load all features
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import { WelcomeComponent } from './home/welcome.component';
-// import {  EventDetailComponent } from './events/event-detail.component';
+import {  EventDetailComponent } from './events/event-detail.component';
 
 @Component({
     selector: 'events-app',
@@ -19,10 +19,10 @@ import { WelcomeComponent } from './home/welcome.component';
                     <li><a [routerLink]="['Events']">Event List</a></li>
                 </ul>
             </div>
-            <div class='container'>
-                <router-outlet></router-outlet>
-            </div>
         </nav>
+        <div class='container'>
+            <router-outlet></router-outlet>
+        </div>
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -31,7 +31,8 @@ import { WelcomeComponent } from './home/welcome.component';
 
 @RouteConfig([
     { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
-    { path: '/events', name: 'Events', component: EventListComponent }
+    { path: '/events', name: 'Events', component: EventListComponent },
+    { path: '/event/:id', name: 'EventDetail', component: EventDetailComponent }
 ])
 
 export class AppComponent {

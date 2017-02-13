@@ -2,13 +2,14 @@ import { Component, OnInit } from 'angular2/core';
 import { IEvent } from './event';
 import { EventFilterPipe } from './event-filter.pipe';
 import { ThumbComponent } from '../shared/thumb.component';
-import { EventService } from './event.service';
+import { EventService }	from './event.service';
+import { ROUTER_DIRECTIVES } from 'angular2/router';
 
-@Component({
+@Component ({
     templateUrl: 'app/events/event-list.component.html',
-    styleUrls: [ 'app/events/event-list.component.css' ],
+    styleUrls: ['app/events/event-list.component.css'],
     pipes: [EventFilterPipe],
-    directives: [ThumbComponent]
+    directives: [ThumbComponent, ROUTER_DIRECTIVES]
 })
 
 export class EventListComponent implements OnInit {
@@ -16,13 +17,11 @@ export class EventListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    searchCriteria: string = '';
+    searchCriteria: string;
     events: IEvent[];
     errorMessage: string;
 
-    constructor( private _eventService: EventService ) {
-
-    }
+    constructor(private _eventService: EventService) { }
 
     toggleImage(): void {
         this.showImage = !this.showImage;
@@ -37,4 +36,5 @@ export class EventListComponent implements OnInit {
     onRatingClicked(message: string): void {
         this.pageTitle = 'Event List: ' + message;
     }
+
 }

@@ -11,7 +11,7 @@ export class EventService {
     getEvents(): Observable<IEvent[]> {
         return this._http.get(this._eventUrl)
         .map((response: Response) => <IEvent[]>response.json())
-        .do(data => console.log('All: ' + JSON.stringify(data)))
+        // .do(data => console.log('All: ' + JSON.stringify(data)))
         .catch(this.handleError);
     }
 

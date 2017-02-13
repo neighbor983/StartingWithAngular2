@@ -32,7 +32,6 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 EventService.prototype.getEvents = function () {
                     return this._http.get(this._eventUrl)
                         .map(function (response) { return response.json(); })
-                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
                         .catch(this.handleError);
                 };
                 EventService.prototype.handleError = function (error) {
