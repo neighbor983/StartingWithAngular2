@@ -34,7 +34,7 @@ System.register(['angular2/core', './event-filter.pipe', '../shared/thumb.compon
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
-                    this.searchCriteria = 'beach';
+                    this.searchCriteria = '';
                 }
                 EventListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
@@ -49,7 +49,6 @@ System.register(['angular2/core', './event-filter.pipe', '../shared/thumb.compon
                 };
                 EventListComponent = __decorate([
                     core_1.Component({
-                        selector: 'el-events',
                         templateUrl: 'app/events/event-list.component.html',
                         styleUrls: ['app/events/event-list.component.css'],
                         pipes: [event_filter_pipe_1.EventFilterPipe],

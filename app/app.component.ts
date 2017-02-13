@@ -1,20 +1,31 @@
 import { Component } from 'angular2/core';
 import { EventListComponent } from './events/event-list.component';
-import { WelcomeComponent } from './home/welcome.component';
-import { EventService } from './events/event.service';
+import { EventService }	from './events/event.service';
 import { HTTP_PROVIDERS } from 'angular2/http';
-import 'rxjs/Rx';
-import { ROUTER_PROVIDERS, RouteConfig } from 'angular2/router';
+import 'rxjs/Rx';  // Load all features
+import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import { WelcomeComponent } from './home/welcome.component';
+// import {  EventDetailComponent } from './events/event-detail.component';
 
 @Component({
     selector: 'events-app',
     template: `
-        <div>
-            <h1>{{pageTitle}}</h1>
-            <el-events></el-events>
-        </div>
+    <div>
+        <nav class='navbar navbar-default'>
+            <div class='container-fluid'>
+                <a class='navbar-brand'>{{pageTitle}}</a>
+                <ul class='nav navbar-nav'>
+                    <li><a [routerLink]="['Welcome']">Home</a></li>
+                    <li><a [routerLink]="['Events']">Event List</a></li>
+                </ul>
+            </div>
+            <div class='container'>
+                <router-outlet></router-outlet>
+            </div>
+        </nav>
+    </div>
     `,
-    directives: [EventListComponent, WelcomeComponent],
+    directives: [ROUTER_DIRECTIVES],
     providers: [EventService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
 })
 

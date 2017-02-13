@@ -5,7 +5,6 @@ import { ThumbComponent } from '../shared/thumb.component';
 import { EventService } from './event.service';
 
 @Component({
-    selector: 'el-events',
     templateUrl: 'app/events/event-list.component.html',
     styleUrls: [ 'app/events/event-list.component.css' ],
     pipes: [EventFilterPipe],
@@ -17,7 +16,7 @@ export class EventListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    searchCriteria: string = 'beach';
+    searchCriteria: string = '';
     events: IEvent[];
     errorMessage: string;
 
